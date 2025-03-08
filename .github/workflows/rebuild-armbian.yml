@@ -226,12 +226,12 @@ on:
       builder_name:
         description: "Set Armbian builder signature."
         required: false
-        default: "ophub"
+        default: "moode"
         type: choice
         options:
           - ophub
           - angel
-          - yourname
+          - moode
 
 env:
   TZ: America/New_York
@@ -318,7 +318,7 @@ jobs:
 
           mkdir -p /builder/build
           ln -sf /builder/build ${GITHUB_WORKSPACE}/build
-          ln -sf /builder/build /home/runner/work/_actions/ophub/amlogic-s9xxx-armbian/main/build
+          ln -sf /builder/build /home/runner/work/_actions/bakuniverse/amlogic-s9xxx-armbian/main/build
 
           sudo timedatectl set-timezone "${TZ}"
           echo "build_tag=Armbian${set_release}_${{ inputs.armbian_storage }}_$(date +"%Y.%m")" >> ${GITHUB_OUTPUT}
@@ -347,7 +347,7 @@ jobs:
           allowUpdates: true
           removeArtifacts: false
           replacesArtifacts: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.MOODE }}
           body: |
             ### Armbian Image information
             - Default username: root
