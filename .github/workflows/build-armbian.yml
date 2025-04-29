@@ -334,7 +334,7 @@ jobs:
           tag: ${{ steps.clean.outputs.build_tag }}
           artifacts: build/output/images/*
           allowUpdates: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.MOODE }}
 
       - name: Rebuild Armbian
         uses: bakuniverse/amlogic-s9xxx-armbian@main
