@@ -228,12 +228,12 @@ on:
       builder_name:
         description: "Set Armbian builder signature."
         required: false
-        default: "ophub"
+        default: "Moode"
         type: choice
         options:
           - ophub
           - angel
-          - yourname
+          - Moode
 
 env:
   TZ: America/New_York
